@@ -3,6 +3,62 @@ import { useCalendarContext } from '@/components/calendar/calendar-context'
 import { format, isSameDay } from 'date-fns'
 import { cn } from '@/lib/utils'
 
+interface EventPosition {
+  left: string
+  width: string
+  top: string
+  height: string
+}
+
+function getOverlappingEvents(
+  currentEvent: CalendarEventType,
+  events: CalendarEventType[]
+): CalendarEventType[] {
+  return events.filter((event) => {
+    if (event.id === currentEvent.id) return false
+    return (
+      currentEvent.start < event.end &&
+      currentEvent.end > event.start &&
+      isSameDay(currentEvent.start, event.start)
+    )
+  })
+}
+
+function calculateEventPosition(
+  event: CalendarEventType,
+  allEvents: CalendarEventType[]
+): EventPosition {
+  const overlappingEvents = getOverlappingEvents(event, allEvents)
+  const group = [event, ...overlappingEvents].sort(
+    (a, b) => a.start.getTime() - b.start.getTime()
+  )
+  const position = group.indexOf(event)
+  const width = `${100 / (overlappingEvents.length + 1)}%`
+  const left = `${(position * 100) / (overlappingEvents.length + 1)}%`
+
+  const startHour = event.start.getHours()
+  const startMinutes = event.start.getMinutes()
+
+  let endHour = event.end.getHours()
+  let endMinutes = event.end.getMinutes()
+
+  if (!isSameDay(event.start, event.end)) {
+    endHour = 23
+    endMinutes = 59
+  }
+
+  const topPosition = startHour * 128 + (startMinutes / 60) * 128
+  const duration = endHour * 60 + endMinutes - (startHour * 60 + startMinutes)
+  const height = (duration / 60) * 128
+
+  return {
+    left,
+    width,
+    top: `${topPosition}px`,
+    height: `${height}px`,
+  }
+}
+
 export default function CalendarEvent({
   event,
   month = false,
@@ -12,39 +68,20 @@ export default function CalendarEvent({
   month?: boolean
   className?: string
 }) {
-  const { setSelectedEvent, setManageEventDialogOpen } = useCalendarContext()
+  const { events, setSelectedEvent, setManageEventDialogOpen } =
+    useCalendarContext()
 
-  function getEventStyle(event: CalendarEventType) {
-    const startHour = event.start.getHours()
-    const startMinutes = event.start.getMinutes()
-
-    let endHour = event.end.getHours()
-    let endMinutes = event.end.getMinutes()
-
-    if (!isSameDay(event.start, event.end)) {
-      endHour = 23
-      endMinutes = 59
-    }
-
-    const topPosition = startHour * 128 + (startMinutes / 60) * 128
-    const duration = endHour * 60 + endMinutes - (startHour * 60 + startMinutes)
-    const height = (duration / 60) * 128
-
-    return {
-      top: `${topPosition}px`,
-      height: `${height}px`,
-    }
-  }
+  const style = month ? {} : calculateEventPosition(event, events)
 
   return (
     <div
       key={event.id}
       className={cn(
         `px-3 py-1.5 rounded-md truncate cursor-pointer transition-all duration-300 bg-${event.color}-500/10 hover:bg-${event.color}-500/20 border border-${event.color}-500`,
-        !month && 'absolute left-0 right-0 mx-2',
+        !month && 'absolute',
         className
       )}
-      style={!month ? getEventStyle(event) : {}}
+      style={style}
       onClick={(e) => {
         e.stopPropagation()
         setSelectedEvent(event)

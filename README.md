@@ -9,6 +9,7 @@ This calendar is built with shadcn & tailwind. Has all the aspects you'd want in
 - 🎯 Accessible components using Radix UI
 - 📱 Responsive design
 - 🔄 Multiple view modes
+- 📅 Advanced event management
 
 ## Modes
 
@@ -31,6 +32,31 @@ This calendar is built with shadcn & tailwind. Has all the aspects you'd want in
 - Event preview
 - Quick date selection
 - Today highlighting
+
+## Dialog Features
+
+### Create Event Dialog
+
+- 📝 Event title input
+- 🕒 Date/time picker for start and end times
+- 🎨 Color picker for event categorization
+- ✅ Form validation
+- 🔄 Real-time preview
+
+### Manage Event Dialog
+
+- ✏️ Edit existing events
+- 🗑️ Delete events
+- 🕒 Modify date/time
+- 🎨 Update event color
+- ⚡ Quick actions
+
+### Date/Time Picker
+
+- 📅 Calendar date selection
+- ⏰ Hour selection (24-hour format)
+
+[From RDSX](https://time.rdsx.dev/)
 
 ## Contributing
 
