@@ -1,5 +1,5 @@
 import { CalendarEvent } from '@/components/calendar/calendar-types'
-import { addDays, addMonths, startOfMonth } from 'date-fns'
+import { addDays, startOfMonth } from 'date-fns'
 import { colorOptions } from '@/components/calendar/calendar-tailwind-classes'
 
 const EVENT_TITLES = [
@@ -37,7 +37,6 @@ function generateEventDuration(): number {
 export function generateMockEvents(): CalendarEvent[] {
   const events: CalendarEvent[] = []
   const startDate = startOfMonth(new Date())
-  const endDate = addMonths(startDate, 2)
 
   // Generate 120 events over 3 months
   for (let i = 0; i < 120; i++) {

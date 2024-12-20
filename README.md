@@ -1,6 +1,8 @@
 # React/ShadCN Calendar
 
-This calendar is built with shadcn & tailwind. Has all the aspects you'd want in a calendar for a dashboard/app.
+This calendar is built with shadcn & tailwind. Has all the aspects you'd want in a calendar for a dashboard/app!
+
+Make sure to give this repo a star!
 
 ## Features
 
