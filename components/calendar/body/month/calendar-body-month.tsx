@@ -13,14 +13,7 @@ import { cn } from '@/lib/utils'
 import CalendarEvent from '../../calendar-event'
 
 export default function CalendarBodyMonth() {
-  const {
-    date,
-    events,
-    setManageEventDialogOpen,
-    setSelectedEvent,
-    setDate,
-    setMode,
-  } = useCalendarContext()
+  const { date, events, setDate, setMode } = useCalendarContext()
 
   // Get the first day of the month
   const monthStart = startOfMonth(date)

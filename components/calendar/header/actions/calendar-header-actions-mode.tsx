@@ -15,7 +15,7 @@ export default function CalendarHeaderActionsMode() {
       variant="outline"
       value={mode}
       onValueChange={(value) => {
-        value && setMode(value as Mode)
+        if (value) setMode(value as Mode)
       }}
     >
       {calendarModes.map((modeValue) => (
