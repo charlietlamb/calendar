@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# React/ShadCN Calendar
 
-## Getting Started
+This calendar is built with shadcn & tailwind. Has all the aspects you'd want in a calendar for a dashboard/app.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- 🎨 Fully customizable with Tailwind CSS
+- 🌓 Dark mode support
+- 🎯 Accessible components using Radix UI
+- 📱 Responsive design
+- 🔄 Multiple view modes
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Modes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Day
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Detailed single day view
+- Hour-by-hour breakdown
+- Event management
+- Time-slot selection
 
-## Learn More
+### Week
 
-To learn more about Next.js, take a look at the following resources:
+- 7-day view
+- Multiple event display
+- Quick navigation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Month
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Full month overview
+- Event preview
+- Quick date selection
+- Today highlighting
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Original Inspiriation
+
+[Synergy CRM](https://synergy-platform.vercel.app/calendar)
+
+## License
+
+MIT
