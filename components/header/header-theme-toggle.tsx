@@ -11,7 +11,7 @@ import { Monitor, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 
 export function HeaderThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { setTheme } = useTheme()
 
   return (
     <DropdownMenu>
