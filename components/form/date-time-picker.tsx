@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { CalendarIcon, Clock } from 'lucide-react'
+import { CalendarIcon } from 'lucide-react'
 import { format } from 'date-fns'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -12,8 +12,6 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
-import { FormControl } from '@/components/ui/form'
-import { ControllerRenderProps } from 'react-hook-form'
 
 interface DateTimePickerProps {
   field: {
