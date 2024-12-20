@@ -34,7 +34,7 @@ export default function CalendarBodyMonth() {
   const today = new Date()
 
   return (
-    <div className="flex flex-col h-full overflow-hidden">
+    <div className="flex flex-col flex-grow overflow-hidden">
       <div className="hidden md:grid grid-cols-7 border-border divide-x divide-border">
         {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => (
           <div
@@ -46,7 +46,7 @@ export default function CalendarBodyMonth() {
         ))}
       </div>
 
-      <div className="grid md:grid-cols-7 grid-rows-[repeat(6,minmax(0,1fr))] flex-1 overflow-y-auto">
+      <div className="grid md:grid-cols-7 flex-grow overflow-y-auto">
         {calendarDays.map((day) => {
           const dayEvents = events.filter((event) =>
             isSameDay(event.start, day)
@@ -57,7 +57,7 @@ export default function CalendarBodyMonth() {
             <div
               key={day.toISOString()}
               className={cn(
-                'relative flex flex-col border-b border-r p-2 min-h-0',
+                'relative flex flex-col border-b border-r p-2 aspect-square cursor-pointer',
                 !isSameMonth(day, date) && 'bg-muted/50 hidden md:flex'
               )}
               onClick={(e) => {
@@ -74,7 +74,7 @@ export default function CalendarBodyMonth() {
               >
                 {format(day, 'd')}
               </div>
-              <div className="flex flex-col gap-1 mt-1 overflow-hidden">
+              <div className="flex flex-col gap-1 mt-1">
                 {dayEvents.slice(0, 3).map((event) => (
                   <CalendarEvent
                     key={event.id}
