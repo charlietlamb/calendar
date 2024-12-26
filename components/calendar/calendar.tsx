@@ -14,6 +14,7 @@ export default function Calendar({
   setMode,
   date,
   setDate,
+  calendarIconIsToday = true,
 }: CalendarProps) {
   return (
     <CalendarProvider
@@ -23,6 +24,7 @@ export default function Calendar({
       setMode={setMode}
       date={date}
       setDate={setDate}
+      calendarIconIsToday={calendarIconIsToday}
     >
       <CalendarHeader>
         <CalendarHeaderDate />

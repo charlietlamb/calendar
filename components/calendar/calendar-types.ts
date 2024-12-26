@@ -5,7 +5,7 @@ export type CalendarProps = {
   setMode: (mode: Mode) => void
   date: Date
   setDate: (date: Date) => void
-  calendarIconIsToday: boolean
+  calendarIconIsToday?: boolean
 }
 
 export type CalendarContextType = CalendarProps & {
