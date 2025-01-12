@@ -1,0 +1,25 @@
+{
+  "name": "@calendar/calendar",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./components/calendar/index.ts",
+  "types": "./components/calendar/index.ts",
+  "exports": {
+    ".": {
+      "types": "./components/calendar/index.ts",
+      "default": "./components/calendar/index.ts"
+    }
+  },
+  "dependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@calendar/typescript-config": "workspace:*",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3"
+  }
+}

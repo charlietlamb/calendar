@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/charlielamb/Documents/open-source/calendar/apps/web/app/layout\":[\"static/media/569ce4b8f30dc480.p.woff2\",\"static/media/93f479601ee12b01.p.woff2\"]},\"appUsingSizeAdjust\":false,\"pagesUsingSizeAdjust\":false}"
