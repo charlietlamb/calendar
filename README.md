@@ -68,6 +68,10 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 [Synergy CRM](https://synergy-platform.vercel.app/calendar)
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=charlietlamb/calendar&type=Date)](https://star-history.com/#charlietlamb/calendar&Date)
+
 ## License
 
 MIT
